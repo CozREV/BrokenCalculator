@@ -7,7 +7,7 @@
             Calculator calculator = new Calculator();
             Menu menu = new Menu();
 
-            bool running = true;
+            bool running = false;
 
             while (running)
             {
@@ -29,7 +29,7 @@
                         calculator.ShowHistory();
                         break;
 
-                    case "4":
+                    case "10":
                         calculator.ShowHighestResult();
                         break;
 

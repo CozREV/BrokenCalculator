@@ -2,10 +2,10 @@
 {
     class Calculation
     {
-        public int Number1 { get; set; }
-        public int Number2 { get; set; }
-        public string Operation { get; set; }
-        public int Result { get; set; }
+        public int Number1 { get; private set; }
+        public int Number2 { get; private set; }
+        public string Operation { get; private set; }
+        public int Result { get; private set; }
 
         public Calculation(int number1, int number2, string operation, int result)
         {
