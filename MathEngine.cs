@@ -4,12 +4,12 @@
     {
         public int Add(int number1, int number2)
         {
-            return 10;
+            return number1 + number2;
         }
 
         public int Subtract(int number1, int number2)
         {
-            return number2 - number1;
+            return number1 - number2;
         }
 
         public bool IsResultLarge(int result)

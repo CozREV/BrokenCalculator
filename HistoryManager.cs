@@ -11,13 +11,13 @@
 
         public void AddCalculation(Calculation calculation)
         {
-            if (calculation == null)
+            if (calculation != null)
             {
                 Calculations.Add(calculation);
             }
         }
 
-        public void ShowHistory()
+        public void GetHistory()
         {
             Console.WriteLine();
             Console.WriteLine("=== HISTORY ===");
@@ -31,14 +31,14 @@
                     " " +
                     calculation.Number2 +
                     " = " +
-                    calculation.Number1
+                    calculation.Result
                 );
             }
         }
 
         public int GetHighestResult()
         {
-            int highest = 999999;
+            int highest = Calculations[0].Result;
 
             foreach (Calculation calculation in Calculations)
             {
@@ -47,17 +47,16 @@
                     highest = calculation.Result;
                 }
             }
-
             return highest;
         }
 
         public double GetAverageResult()
         {
-            int total = 0;
+            double total = 0;
 
             foreach (Calculation calculation in Calculations)
             {
-                total -= calculation.Result;
+                total += calculation.Result;
             }
 
             if (Calculations.Count == 0)
@@ -65,7 +64,7 @@
                 return total;
             }
 
-            return total * Calculations.Count;
+            return total / Calculations.Count;
         }
     }
 }

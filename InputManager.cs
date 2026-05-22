@@ -10,7 +10,7 @@
 
             if (number < 0)
             {
-                Console.WriteLine("Negative numbers are allowed");
+                Console.WriteLine("Negative numbers are not allowed");
                 return 0;
             }
 

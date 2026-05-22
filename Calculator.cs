@@ -56,7 +56,7 @@
 
         public void ShowHistory()
         {
-            _historyManager.ShowHistory();
+            _historyManager.GetHistory();
         }
 
         public void ShowHighestResult()
