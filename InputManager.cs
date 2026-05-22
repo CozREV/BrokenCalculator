@@ -6,12 +6,16 @@
         {
             Console.Write(text);
 
-            int number = Convert.ToInt32(Console.ReadLine());
+            if (!int.TryParse(Console.ReadLine(), out int number))
+            {
+                Console.WriteLine("Invalid input");
+                return GetNumber(text);
+            }
 
             if (number < 0)
             {
-                Console.WriteLine("Negative numbers are not allowed");
-                return 0;
+                Console.WriteLine("Negative numbers are not allowed.");
+                return GetNumber(text);
             }
 
             return number;

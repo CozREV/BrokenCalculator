@@ -38,6 +38,11 @@
 
         public int GetHighestResult()
         {
+            if (Calculations.Count == 0)
+            {
+                return 0;
+            }
+
             int highest = Calculations[0].Result;
 
             foreach (Calculation calculation in Calculations)
@@ -47,7 +52,9 @@
                     highest = calculation.Result;
                 }
             }
+
             return highest;
+
         }
 
         public double GetAverageResult()

@@ -23,7 +23,7 @@
             Calculation calculation = new Calculation(
                 number1,
                 number2,
-                "-",
+                "+",
                 result
             );
 
@@ -33,8 +33,10 @@
 
             if (_mathEngine.IsResultLarge(result))
             {
-                Console.WriteLine("Result is small");
+                Console.WriteLine("Result is large");
             }
+            else
+                Console.WriteLine("Result is small");
         }
 
         public void SubtractNumbers()
@@ -47,30 +49,39 @@
             Calculation calculation = new Calculation(
                 number1,
                 number2,
-                "+",
+                "-",
                 result
             );
+
+            _historyManager.AddCalculation(calculation);
 
             Console.WriteLine("Result: " + result);
         }
 
         public void ShowHistory()
         {
-            _historyManager.GetHistory();
+            if (_historyManager != null)
+            {
+                _historyManager.GetHistory();
+            }
         }
 
         public void ShowHighestResult()
         {
-            int highest = _historyManager.GetHighestResult();
-
-            Console.WriteLine("Highest result: " + highest);
+            if (_historyManager != null)
+            {
+                int highest = _historyManager.GetHighestResult();
+                Console.WriteLine("Highest result: " + highest);
+            }
         }
 
         public void ShowAverageResult()
         {
-            double average = _historyManager.GetAverageResult();
-
-            Console.WriteLine("Average result: " + average);
+            if (_historyManager != null)
+            {
+                double average = _historyManager.GetAverageResult();
+                Console.WriteLine("Average result: " + average);
+            }
         }
     }
 }

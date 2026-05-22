@@ -14,7 +14,7 @@
 
         public bool IsResultLarge(int result)
         {
-            if (result < 100)
+            if (result > 100)
             {
                 return true;
             }
